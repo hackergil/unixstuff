@@ -1,0 +1,19 @@
+#!/bin/bash
+#Script for test (if)
+#Gets the time and salutes accordingly
+
+FECHA=`date`;
+TIME=`date +%k`;
+if [ $TIME -le "6" ]; then
+	MSG="Dude, you should be sleeping ";
+elif [ $TIME -le "12" ]; then
+	MSG="Good morning ";
+elif [ $TIME -le "19" ]; then
+	MSG="Good afternoon ";
+elif [ $TIME -le "24" ]; then
+	MSG="Good night ";
+fi
+echo $MSG $1
+echo "today is: " $FECHA;
+echo "Users connected to the system: ";
+who

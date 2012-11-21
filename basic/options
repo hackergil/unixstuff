@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Script for getopts demonstration
+# 
+# while getopts cdme OPTION; do
+# case ${OPTION} in
+# 	c) clear;;
+# 	d) ls -l ;;
+# 	m) echo "WTF is midnight commander?";;
+# 	e) vi ;;
+# 	*) echo "Invalid option"
+# esac
+# done
+
+while getopts d:b:n:h OPTION; do
+       case ${OPTION} in
+           d) BACKUP_DIR=$OPTARG;;
+           b) SLIDESHOWPRO_DIR=$OPTARG;;
+           n) NUMBER_BACKUPS_PRESERVED=$OPTARG;;
+           h) usage;;
+       esac
+   done
+   echo $BACKUP_DIR
+   echo $SLIDESHOWPRO_DIR
+   echo $NUMBER_BACKUPS_PRESERVED

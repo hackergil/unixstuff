@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Check number of arguments
+if [ $# != 2 ]; then
+	echo "Exactly two arguments must be provided"
+	exit;
+fi
+#Check filename
+if [ -f $1 ]; then
+	echo "File $1 found"
+	#Check if the name is already in the file
+	name=`grep "$2" $1`
+	if [ -n "$name" ]; then
+		#Name is already in the file
+		echo "Name found: $name"
+	else
+		# Concatenate name to current file
+		$2 >> $1
+	fi
+else
+	echo "File $1 does not exist"
+	exit;
+fi
+

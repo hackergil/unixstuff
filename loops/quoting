@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "WTF Script"
+list="yo tu el"
+for a in $list; do
+	echo "El es $a"
+done
+

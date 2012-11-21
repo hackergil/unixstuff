@@ -1,4 +1,5 @@
 unixstuff
 =========
 
-Unix stuff of course
+Compendium of unix exercises and useful utilities.
+

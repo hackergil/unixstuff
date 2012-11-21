@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Check number of arguments
+if [ $# = 0 ]; then
+	echo "Please provide filename as an argument"
+	exit
+fi
+
+if [ -f $1 ]; then
+	#File exits, let's read it and create some directories
+	#First, parent directory	
+	if [ ! -d "submit" ]; then
+		`mkdir submit`
+	fi
+	while read line; do
+		#Check that directory does not exist yet
+		if [ ! -d "./submit/$line" ]; then
+			`mkdir "./submit/$line"`
+		fi
+	done < $1
+else
+	#File does not exist.
+	echo "File $1 does not exist"	
+	exit
+fi

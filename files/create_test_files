@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#Script to create test files
+#An extension can be added as an argument. Default extension will be .txt
+
+#Check for optional extension
+DIR="test_files"
+if [ $# = 0 ]; then
+	ext="txt"
+else
+	ext="$1"
+fi
+
+if [ ! -d $DIR ]; then
+	mkdir $DIR
+fi
+
+# Create files
+for i in {0..5}; do
+	touch "./$DIR/$i. - file.$ext"
+done

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# = 0 ]; then
+	echo "Usage: karaoke [filename]"; exit 1
+else
+	file=$1
+	if [ ! -f $file ]; then
+		echo "File $file does not exist"; exit 0
+	fi
+fi
+
+clear
+echo -n
+i=1
+#Print bold text
+#\033 is an escape sequence, [1 turns on the bold attribute, [0 turns it off
+while read line; do
+	echo -e "\033[${i}m$line\033[0m"
+	sleep 1
+done<$file
+

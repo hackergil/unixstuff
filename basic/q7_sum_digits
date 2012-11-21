@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#script to print given numbers sum of all digit, 
+#For eg. If no is 123 it's sum of all digit will be 1+2+3 = 6.
+
+if [ $# = 0 ]; then
+	echo "Please provide a number"
+else
+	sum=0
+	number=$1
+	#we have to know the length of the string
+	#expr evaluates an expression and lets us manipulate strings
+	length=`expr length $number`
+	for((i=1; i<=$length; i++)); do
+		digit=`expr substr $number $i 1`
+		sum=$(($sum + $digit))
+	done
+	echo $sum
+fi

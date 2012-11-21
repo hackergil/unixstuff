@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Backup files script
+#It will look for all the files with a given extension, remove dashes and spaces and back them up with a .bak extension.
+BACKUP_DIR="$HOME/backup"
+
+if [ $# = 0 ]; then
+	ext="*"
+else
+	ext="*.$1"
+fi
+
+if [ ! -d $BACKUP_DIR ]; then
+	mkdir $BACKUP_DIR
+fi
+
+for file in $ext; do
+	if [ -d $file ]; then
+		r="-r"
+	fi
+	cp $r "$file" "$BACKUP_DIR/`echo $file | sed -e 's| ||g' -e 's|-||'`"
+	r=""
+#	echo "$BACKUP_DIR/$file"
+done

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#script to print given number in reverse order, for eg. If no is 123 it must print as 321.
+
+#check for argument or add default
+if [ $# = 0 ]; then
+	arg="backwards"
+else
+	arg=$1
+fi
+#rev is a unix tool to reverse a string
+#This may fail if rev is in the wrong place
+result=`echo "$arg" | /usr/bin/rev`
+echo $result

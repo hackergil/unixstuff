@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#Script to list (recursively) any given directory contents and save them to a file
+
+if [ $# != 2 ]; then
+	echo "Usage: `basename $0` [directory] [backup_filename]"
+	exit
+fi
+
+dir=$1
+filename=$2
+ls -la $1 > $2

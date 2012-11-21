@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Files in this directory that match *~ :"
+for file in *~; do
+	echo $file
+done
+

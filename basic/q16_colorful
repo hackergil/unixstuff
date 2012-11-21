@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#Script for colorful prints
+#Color	Foreground	Background
+#black		30	40
+#red		31	41
+#green		32	42
+#yellow		33	43
+#blue		34	44
+#magenta	35	45
+#cyan		36	46
+#white		37	47
+
+clear
+
+echo -n
+#Print bold text
+#\033 is an escape sequence, [1 turns on the bold attribute, [0 turns it off
+echo -e "\033[1mThis is your life\033[0m"
+#Blink text
+echo -e "\033[5mBy The Killers\033[0m"
+#Underlined text
+echo -e "\033[4m Candid talks with strangers\033[0m"
+#Background color change. \E indicates background. First color is foreground 
+#second color is background
+#tput sgr0 returns the terminal to its original state(you can also use \E[0m)
+echo -e '\E[34;47mBeauty lifes in danger'; tput sgr0
+echo -e '\E[1;33;44mNo one gives a damn about your hair'; tput sgr0
+
+
+ 

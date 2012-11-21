@@ -1,0 +1,19 @@
+#!/bin/bash
+#Displays the numbers from param to 1
+
+echo "Enter a number to start counting: "
+#Read variable from command line
+read var
+#Check if variable is not null (-z)
+if [ -z $var ]; then
+	echo "No number detected. Defaut value is 20"
+#assign 20 to var as default value
+	let "var = 20"
+fi
+
+while [ $var -ge 0 ]; do
+        echo $var
+        let "var -= 1"
+done
+echo "GO!"  
+           

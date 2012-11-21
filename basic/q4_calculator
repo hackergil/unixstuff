@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#Basic calculator script
+#using case statement to perform basic math operation as follows:
+#+ addition
+#- subtraction
+#x multiplication
+#/ division
+# Usage example:
+#$ ./calculator 20 / 3, 
+#Also checks for sufficient command line arguments
+
+#first step: 3 and only 3 arguments
+if [ $# != 3 ]; then
+	echo "3 arguments are required [operand][operator][operand]"
+else
+	op1=$1
+	op2=$3
+	#Let's check operands
+	case $2 in
+		+) result=$(($op1 + $op2));;
+		-) result=$(($op1 - $op2));;
+		x) result=$(($op1 * $op2));;
+		/) result=$(($op1 / $op2));;
+		*) echo "Invalid operand";
+	esac
+	if [ ! -z $result ]; then
+		echo $result
+	fi
+fi
+

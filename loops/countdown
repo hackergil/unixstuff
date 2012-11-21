@@ -1,0 +1,8 @@
+#!/bin/bash
+#Despliega los numeros del 1 al 20
+var=20
+while [ $var -ge 0 ]; do
+	echo $var
+	let "var -= 1"
+done
+echo "GO!"
